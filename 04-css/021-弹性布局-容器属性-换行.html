@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>021-弹性布局-容器属性-换行.html</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<style type="text/css">
+		*{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+        	display: flex;
+
+            /* flex-wrap 决定项目一行排不下，如何换行 */
+            
+            /* flex-wrap: nowrap; */    
+            /* nowrap(默认值):不换行,元素的宽度按照指定宽的的比例从新计算 */
+
+            /* flex-wrap: wrap; */
+            /* wrap:换行,第一行在上方 */
+            
+            /* flex-wrap:wrap-reverse; */
+            /* wrap-reverse:换行,第一行在下方 */
+
+
+
+            
+            /* flex-flow */
+            /* flex-direction属性和flex-wrap属性的简写形式,默认值为row nowrap */
+            flex-flow: row-reverse wrap;
+
+
+        	width: 1000px;
+        	border: 1px solid #000;
+        	margin-top: 50px;
+        	margin-right: auto;
+        	margin-left: auto;
+        }
+        .father div{
+        	height: 50px;
+        }
+        .son1{
+        	width: 200px;
+        	background-color: tomato;
+        }
+        .son2{
+        	width: 400px;
+        	background-color: pink;
+        }
+        .son3{
+        	width: 1000px;
+        	background-color: blue;
+        }
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son1"></div>
+		<div class="son2"></div>
+		<div class="son3"></div>
+	</div>
+</body>
+</html>
