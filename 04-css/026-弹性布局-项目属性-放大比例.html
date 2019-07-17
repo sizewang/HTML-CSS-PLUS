@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>026-弹性布局-项目属性-放大比例.html</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<style type="text/css">
+		*{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+     	    display: flex;
+        	width: 1000px;
+            /* height: 400px; */
+        	border: 1px solid #000;
+        	margin-top: 50px;
+        	margin-right: auto;
+        	margin-left: auto;
+        }
+        .father div{
+        	height: 50px;
+        }
+
+    /* flex-grow 项目的放大比例,默认为0,即如果存在剩余空间,也不放大
+    如果所有项目的flex-grow属性都为1,则它们将等分剩余空间(如果有的话)
+    如果一个项目的flex-grow属性为2,其他项目都为1,则前者占据的剩余空间将比其他项多一倍  */
+
+        
+        .son1{
+        	width: 100px;
+        	background-color: tomato;
+            flex-grow: 1
+        }
+        .son2{
+        	width: 200px;
+        	background-color: pink;
+            flex-grow: 1
+        }
+        .son3{
+        	width: 400px;
+        	background-color: blue;
+            /* flex-grow: 1 */
+        }
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son1"></div>
+		<div class="son2"></div>
+		<div class="son3"></div>
+	</div>
+</body>
+</html>

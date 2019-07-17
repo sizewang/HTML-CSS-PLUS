@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>025-弹性布局-项目属性-排序.html</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<style type="text/css">
+		*{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+     	    display: flex;
+        	width: 1000px;
+            height: 400px;
+        	border: 1px solid #000;
+        	margin-top: 50px;
+        	margin-right: auto;
+        	margin-left: auto;
+        }
+        .father div{
+        	height: 50px;
+        }
+
+
+        /* order 项目的排列顺序,数值越小,排列越靠前,默认为0 */
+
+        
+        .son1{
+        	width: 100px;
+        	background-color: tomato;
+            order: 3
+        }
+        .son2{
+        	width: 200px;
+        	background-color: pink;
+            order: 2
+        }
+        .son3{
+        	width: 400px;
+        	background-color: blue;
+            order: 1
+        }
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son1"></div>
+		<div class="son2"></div>
+		<div class="son3"></div>
+	</div>
+</body>
+</html>

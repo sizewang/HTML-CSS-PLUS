@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>023-弹性布局-容器属性-水平对齐方式.html</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<style type="text/css">
+		*{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+        	display: flex;
+            
+            /*justify-content 决定项目的水平对齐方式 */
+
+            /* justify-content: flex-start; */
+            /* flex-start(默认值):左对齐 */
+            
+            /* justify-content: flex-end; */
+             /* flex-end:右对齐 */
+    
+             /* justify-content: center; */
+             /* center:居中 */
+
+
+             /* justify-content: space-between; */
+             /* space-between:两端对齐,项目之间的间隔都相等。 */
+
+            justify-content: space-around;
+           /*  space-around:每个项目两侧的间隔相等。所以,项目之间的间隔比项目与边框的间隔大一倍。 */
+
+        	width: 1000px;
+        	border: 1px solid #000;
+        	margin-top: 50px;
+        	margin-right: auto;
+        	margin-left: auto;
+        }
+        .father div{
+        	height: 50px;
+        }
+        .son1{
+        	width: 100px;
+        	background-color: tomato;
+        }
+        .son2{
+        	width: 200px;
+        	background-color: pink;
+        }
+        .son3{
+        	width: 400px;
+        	background-color: blue;
+        }
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son1"></div>
+		<div class="son2"></div>
+		<div class="son3"></div>
+	</div>
+</body>
+</html>
