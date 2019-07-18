@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>013-Set去除数组重复值.html</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	let arr = [11,22,11,33,22,66]
+
+	//数组去重方法一
+	// function uniqueArray1(arr){
+	// 	let result = []
+	// 	for(let i = 0;len = arr.length;i<len;i++){
+	// 		if(result.indexOf(arr[i]) ==-1){
+	// 			result.push(arr[i])
+	// 		}
+	// 	}
+	// 	return result
+	// }
+
+
+	// Set的遍历顺序就是插入顺序
+	//数组去重方法二
+	// function uniqueArray2(arr){
+	// 	let result = []
+	// 	let obj = {}
+	// 	for(let i = 0;len = arr.length;i<len;i++){
+	// 		obj[arr[i]] = ''
+	// 	}
+	// 	for(let key in obj){
+	// 		result.push(key)
+	// 	}
+	// 	return result
+	// }
+
+
+
+	//数组去重方法三        利用Set值唯一去除数组重复值
+	function uniqueArray3(arr){
+		// let s = new Set(数组)
+		const s = new Set(arr)
+		return [...s]
+	}
+
+
+
+	let arr1 = uniqueArray3(arr)
+	console.log('arr',arr)
+	console.log('arr1',arr1)
+
+</script>
+</html>

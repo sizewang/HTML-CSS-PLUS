@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>008-数组的扩展运算.html</title>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+	</ul>
+</body>
+<script type="text/javascript">
+	// var arr = [11,22,33]
+	// console.log(arr);
+	// 扩展运算符是三个点...
+	// console.log(...arr);//11 22 33
+
+
+
+	// function sum(n1,n2){
+	// 	return n1+n2
+	// }
+	// var arr1 =[3,4]
+	// console.log(sum(1,2))//3
+	// console.log(sum(...arr1));//7
+	// console.log(sum.apply(null,arr1));
+
+
+
+
+	// function sum(...arr){
+	// 	// console.log(arr)
+	// 	let total = 0;
+	// 	for(let i=0,len=arr.length;i<len;i++){
+	// 		total += arr[i]
+	// 	}
+	// 	return total
+	// }
+	// console.log(sum(1,2,3,4))//10
+
+
+
+
+	// 数组复制的是一个地址
+	const arr = [11,55,99,33,190]
+
+	// console.log(Math.max(1,2,9))//9
+	// console.log(Math.max.apply(null,arr))
+	// console.log(Math.max(...arr))
+
+	// 浅拷贝
+	// const arr1 = arr
+
+	// arr.push(88)
+
+
+	//深拷贝1
+	// var arr1 = []
+	// for(let i=0,len=arr.length;i<len;i++){
+	// 	arr1.push(arr[i])
+	// }
+	// arr1.push(88)
+
+
+
+
+	// 深拷贝2
+	// const arr1 = arr.concat()
+	// arr1.push(88)
+
+
+
+
+
+	// 深拷贝3
+	// const arr1 = arr.slice()
+	// arr1.push(88)
+
+
+
+
+	// 深拷贝4
+	// const arr1 = [...arr]
+	// arr1.push(88)
+	// console.log('arr',arr)
+	// console.log('arr1',arr1)
+
+
+
+	// 可以用数组的扩展运算来把伪数组转换伪真数组 let arr = [...伪数组]
+	const aLi = document.getElementsByTagName('li');
+
+	console.log(aLi);
+	//伪数组扩展成真数组
+	console.log([...aLi]);
+
+
+
+
+	
+</script>
+</html>

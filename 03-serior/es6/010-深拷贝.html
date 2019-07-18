@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>010-深拷贝.html`</title>
+</head>
+<body>
+	<!-- 如果被拷贝对象中有复杂数据,实际拷贝的是引用(浅拷贝)
+	如果拷贝的是引用,而且改变引用的属性的值,会影响所有引用它的对象
+	复杂数据包括  对象   数组   函数 -->
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	var obj = {
+		name :'tom',
+		age:18,
+		friend:{
+			name:'Leo'
+		},
+		pets:{
+			'Cat','Dog'
+		}
+	}
+	//1.直接复制 浅拷贝
+	// cosnt obj1 = obj
+
+	// obj1.name = 'peter'
+	// console.log('obj1',obj1)
+	// console.log('obj2',obj2)
+
+
+
+	//2.用扩展运算符  浅拷贝
+	// const obj1 = {...obj}
+	// obj1.name = 'peter'
+	// obj1.friend.name = "Mike"
+	// console.log('obj1',obj1)
+	// console.log('obj2',obj2)
+
+
+
+	//3.循环遍历对象  浅拷贝
+	// const obj1 = {}
+	// for(let key in obj){
+	// 	obj1[key] = obj[key]
+	// }
+	// obj1.name = 'peter'
+	// obj1.friend.name = "Mike"
+	// obj1.pet.push('Tigger')
+
+	// console.log('obj1',obj1)
+	// console.log('obj2',obj2)
+
+
+
+
+	//4.写深拷贝的程序   深拷贝
+	function getDataType(data){
+		if(data instanceof Array){
+			return 'array'
+		}
+		else if (data instanceof Object) {
+			return 'Object'
+		}
+	}
+
+	function deepCopy(data){
+		const type = getDataType(data)
+		let result
+
+		if(type == 'array'){
+			result = []
+		}
+		else if (type == 'object') {
+			result = {}
+		}else{
+			return data
+		}
+	}
+
+	//循环遍历对象或数组
+	for (let =0;)
+// ---------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+	//5.利用JSON方法   深拷贝
+	const obj1 = JSON.parse(Json.stringify(obj))
+	obj1.name = 'peter'
+	obj1.friend.name = "Mike"
+	obj1.pet.push('Tigger')
+
+	console.log('obj1',obj1)
+	console.log('obj2',obj2)
+
+
+
+	//6.利用Jquery方法深拷贝
+	
+
+
+</script>
+</html>

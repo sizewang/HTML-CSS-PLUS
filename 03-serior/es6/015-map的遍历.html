@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>015-map的遍历.html</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	const m = new Map()
+	let obj1 = {id:1001}
+	let obj2 = {id:1001}
+
+	
+	m.set('name','Tom')
+	m.set(obj1,'Hello')
+	m.set(obj2,'你好')
+
+	////keys():返回键名的遍历器
+	for(let key of m.keys()){
+		console.log('key:',key)
+	}
+
+	//values():返回键值的遍历器
+	for(let value of m.values()){
+		console.log('value:',value)
+	}
+
+	//entries():返回键值对的遍历器
+	for(let entry of m.entries()){
+		console.log('entry:',entry)
+	}
+
+	//forEach(function(value,key){}):使用回调函数遍历
+	m.forEach( function(value,key) {
+		console.log('value=' + value+':'+'key='+key)
+	});
+
+	//注意点:::     Map的遍历顺序就是插入顺序
+</script>
+</html>
