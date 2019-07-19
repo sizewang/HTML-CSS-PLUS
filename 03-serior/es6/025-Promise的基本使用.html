@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>025-Promise的基本使用.html</title>
+</head>
+<body>
+	<!-- Promise有三种状态
+					pending（进行中）
+					fulfilled（已成功）
+					rejected（已失败） -->
+</body>
+<script type="text/javascript">	
+	// 当 new Promise时,Promise里面的回调函数会立即执行
+
+	// Promise构造函数接受一个函数作为参数,该函数的两个参数分别是resolve和reject
+	const promise = new Promise((resolve,reject)=>{
+		//异步处理逻辑
+		//如果一部处理成功 调用resolve 此时 promise实例 由 pending->fulfilled
+		// resolve('ok')
+
+		//如果一部处理失败 调用resolve 此时 promise实例 由 pending->rejected
+		// rejected('error')
+		setTimeout(()=>{
+			resolve('ok');//成功
+			reject('error');//失败
+		},0)
+		
+	}) 
+	console.log(promise);
+
+
+	promise
+	.then(data=>{
+		console.log(data);
+		console.log(promise);
+	},err=>{
+		console.log(err);
+		console.log(promise);
+	})
+
+
+
+
+
+
+
+
+
+
+
+
+
+	// const promise = new Promise((resolve,reject)=>{
+	// setTimeout(()=>{
+	// 	resolve('ok')
+	// 	reject('error')
+	// 	},0)
+	// })
+	// console.log(promise)
+
+	// promise
+	// .then(data=>{
+	// 	console.log(data)
+	// 	console.log(promise)
+	// },err=>{
+	// 	console.log(err)
+	// 	console.log(promise)
+	// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
