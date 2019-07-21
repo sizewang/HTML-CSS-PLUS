@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>039-generator函数的基本使用.html</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function * gen(){
+		//function关键字与函数名之间有一个星号
+		console.log('start gen fn....')
+
+		yield 'data1'//函数体内部使用yield表达式定义不同的内部状态
+		console.log('do something after get data1')
+
+		yield 'data2'
+		console.log('do something after get data2')
+
+		// console.log('end gen fn....')
+
+		yield 'data3'
+		console.log('do something after get data3')
+
+		return 'result data666 '
+		//如果没有再遇到新的yield表达式，就一直运行到函数结束，直到return语句为止，并将return语句后面的表达式的值，作为返回的对象的value属性值
+		//如果该函数没有return语句，则返回的对象的value属性值为undefined,
+	}
+
+
+	//Generator 函数的调用方法与普通函数一样，也是在函数名后面加上一对圆括号
+	const g = gen()
+
+	console.log(g.next())//data1
+	//.next()方法返回结果是一个对象,碰到yield会停止
+	//如果需要程序往下执行,需要再次调用
+
+	console.log(g.next()) //data2
+	//next方法的作用是分阶段执行Generator函数。
+
+	console.log(g.next()) //data3
+
+	console.log(g.next()) //'result data666'
+
+
+
+
+</script>
+</html>

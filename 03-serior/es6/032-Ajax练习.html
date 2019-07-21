@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>032-Ajax练习.html</title>
+</head>
+<body>
+	<button id="btn">点击我</button>
+</body>
+<script type="text/javascript">
+	var oBtn = document.getElementById('btn');
+
+	oBtn.onclick = function(){
+		//1.创建Ajax对象,非IE浏览器用new XMLHttpRequest()
+		var oAjax = new XMLHttpRequest();
+		//2.和服务器建立连接
+		oAjax.open('GET','http:127.0.0.1:3000/data.json',true);
+		//3.发送请求
+		oAjax.send();
+		//4.监听方法,获取数据
+		oAjax.onreadystatechange = function(){
+			if(oAjax.readyState == 4){
+				//判断交互是否成功
+				console.log(oAjax.status);
+				if(oAjax.status==200){
+					console.log('get data success:::' + oAjax.responseText);
+				}else{
+					console.log('get data fail:::' + oAjax.status);
+				}
+			}
+		}
+	}
+ 
+</script>
+</html>

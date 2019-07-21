@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>008-删除Li.html</title>
+</head>
+<body>
+	<ul id="list">
+   		<li>01 <a href="#"> 删除</a></li>   
+   		<li>02 <a href="#"> 删除</a></li> 
+  		<li>03 <a href="#"> 删除</a></li>   
+  		<li>04 <a href="#"> 删除</a></li>   
+  		<li>05 <a href="#"> 删除</a></li>   
+  		<li>06 <a href="#"> 删除</a></li>  
+  	</ul>
+ 
+</body>
+<script type="text/javascript">
+	// var oUl = document.getElementById('list');
+	// oUl.onclick=function(ev){
+	// 	var target = ev.target;
+	// 	oUl.removeChild(target.parentNode);
+	// }
+
+
+	var oUl = document.getElementById('list');
+	oUl.onclick = function(ev){
+		var target = ev.target;
+		oUl.removeChild(target.parentNode);
+	}
+
+
+
+</script>
+</html>
