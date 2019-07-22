@@ -10,10 +10,12 @@
 <script src="js/jquery-1.12.4.js"></script>
 <script type="text/javascript">
 
-	const getDataPromise = (url,type='get',data='')=> new Promise((resolve,reject)=>{
+	const getDataPromise = (url,type='get',data='')=>new Promise((resolve,reject)=>{
+		//处理异步请求(ajax)
 		$.ajax({
 			url:url,
 			type:type,
+			data:data,
 			success:(data)=>{
 				resolve(data)
 			},
@@ -35,30 +37,26 @@
 	}
 
 	getOrder('a')
-	.then(data=>{
-		console.log(data)
-	})
+    .then(data=>{
+        console.log(data)
+    })
 
 	async function getUsers(){
 		// const userA = await getDataPromise('./data/a.json')
 		// const userB = await getDataPromise('./data/b.json')
 
-		const PromiseA = getDataPromise('./data/a.json')
-		const PromiseB = getDataPromise('./data/b.json')
-		const userA = await PromiseA
-		const userB = await PromiseB
-
-
+		const promiseA = getDataPromise('./data/a.json')
+		const promiseB = getDataPromise('./data/b.json')
+		const userA = await promiseA
+		const userB = await promiseB
 
 		return [userA,userB]
 	}
 
 	getUsers()
 	.then(data=>{
-		console.log(data)
+		console.log(data);
 	})
-
-
 
 
 
