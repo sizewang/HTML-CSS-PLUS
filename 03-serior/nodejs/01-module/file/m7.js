@@ -5,7 +5,8 @@
 
 
 
-const m8 = require('./m8')
-
+const m8 = require('./m8.json')
 
 console.log(m8)
+
+
