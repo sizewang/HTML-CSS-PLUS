@@ -1,5 +1,5 @@
 
-
+//返回的是一个类
 const EventEmitter = require('events')
 console.log(EventEmitter)
 
@@ -11,7 +11,7 @@ emitter.on('test',()=>{
 	console.log('execute test fn...')
 })
 
-// //事件触发
+//事件触发
 emitter.emit('test')
 
 
