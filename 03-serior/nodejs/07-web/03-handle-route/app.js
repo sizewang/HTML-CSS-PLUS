@@ -3,6 +3,10 @@ const http = require('http')
 const fs = require('fs')
 const path = require('path')
 const url = require('url')
+const querystring = require('querystring')
+
+const swig = require('swig')
+
 const { get } = require('./Model/item.js')
 const mime = require('./mime.json')
 
@@ -24,29 +28,50 @@ const server = http.createServer((req,res)=>{
         get()
         .then(data=>{
             //将数据分配到页面并返回页面
-            console.log(data)
-            //引入模版
             const filePath = path.normalize(__dirname+"/static/index.html")
-            //1.读取文件
-            fs.readFile(filePath,(err,data)=>{
-                //2.返回数据
-                if(err){
-                    res.setHeader('Content-type',"text/html;charset=UTF-8")
-                    res.statusCode = 404
-                    res.end('<h1>请求出错了</h1>')
-                }else{
-                    res.setHeader('Content-type',"text/html;charset=UTF-8")
-                    res.end(data) 
-                }
+            //引入模版
+            const template = swig.compileFile(filePath)
+            
+            const html = template({
+                data:data
+            })
+            res.setHeader('Content-type',"text/html;charset=UTF-8")
+            res.end(html)
+          })
+            .catch(err=>{
+                res.setHeader('Content-type',"text/html;charset=UTF-8")
+                res.statusCode = 404
+                res.end('<h1>请求出错了</h1>')
+            })
+      
+    }
+   //添加路由
+    else if(pathname == "/add"){//POST请求
+        //1.获取参数
+        let body = ''
+        req.on('data',(chunk)=>{
+            body+=chunk
+        })
+        req.on('end',()=>{
+            const query = querystring.parse(body)
+            //2.根据参数生成任务对象并且写入到文件中
+            add(query.task)
+            .then(data=>{
+                //3.如果写入成功,将新生成的任务对象返回到前端    
+                res.end(JSON.stringify({
+                    code:0,
+                    message:'添加成功',
+                    data:data
+                }))
+            })
+            .catch(err=>{
+               console.log("add task err::",err)
+               res.end(JSON.stringify({
+                    code:1,
+                    message:'添加失败',
+                }))                
             })
         })
-    }
-    //添加路由
-    else if(pathname == "/add"){
-        console.log('add....')
-        res.end(JSON.stringify({
-            code:0
-        }))
     }
     //静态资源的处理
     else{
