@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>011-set的基本使用操作方法.html</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	// const s = new Set()
+	// console.log(s)
+
+
+
+	// const arr = [11,22,33]
+	// const s  = new Set(arr)
+	// console.log(s)
+
+
+
+
+
+
+	const s = new Set()
+
+	// add(value):添加某个值,返回 Set 结构本身
+	s.add(1)
+	s.add(2)
+	s.add(3)
+	s.add(4)
+	s.add(5)
+	// delete(value):删除某个值,返回一个布尔值,表示删除是否成功
+	console.log('s.delete(1)::',s.delete(5))
+
+	// has(value):返回一个布尔值,表示该值是否为Set的成员
+	console.log('s.has(4)::',s.has(4))
+
+	// clear():清除所有值,没有返回值
+	s.clear()
+
+	// Set对象的size属性返回Set实例的值的总数
+	console.log(s.size)
+
+	console.log(s)
+
+
+</script>
+</html>

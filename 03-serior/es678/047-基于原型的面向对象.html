@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>047-基于原型的面向对象.html</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	
+
+	//这是一个函数
+	//构造函数
+	//类
+	function Person(name,age){
+		/*
+			如果用new调用
+			1.生成一个对象{}
+			2.this->{}
+		*/
+		this.name = name
+		this.age = age
+	}
+
+
+
+
+	Person.prototype.sayName = function(){
+		console.log('My name is' + this.name)
+	}
+	Person.prototype.sayAge = function(){
+		console.log('I am '+ this.age+'years old')
+	}
+	//在原型上添加方法
+	Person.sayHi = function(){
+		console.log('hello')
+	}
+
+	// var p1 = new Person('Tom',18)
+	// console.log(p1)
+	// p1.sayName()
+	// p1.sayAge()
+	// Person.sayHi()
+
+
+
+	//继承
+	function Student(name,age,major){
+		//属性的继承
+		//调用父类方法,改变父类方法中的this指向,指向自己
+		Person.call(this,name,age)//仅仅是方法的调用
+		this.major = major
+	}
+
+
+
+
+
+
+
+
+	Student.prototype = Object.create(Person.prototype)
+
+	//在原型上定义自己的方法
+	Student.prototype.sayMajor = function(){
+		console.log('I am from' + this.major)
+	}
+
+
+
+	//继承其他原型上的方法
+	Student.sayHi = Person.sayHi
+
+	var s1 = new Student('Leo',88,'Computer')
+	console.log(s1)
+	s1.sayName()
+	s1.sayAge()
+	s1.sayMajor()
+	Student.sayHi()
+
+
+
+
+
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>014-map的基本操作.html</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+
+	// let obj = {}
+	// let obj1 = {id:1001}
+	// let obj2 = {id:1001}
+	// obj['name'] = 'Tom'
+
+	// console.log(obj)
+
+
+
+	const m = new Map()
+	let obj1 = {id:1001}
+	let obj2 = {id:1001}
+
+	//set(key,value):设置键名key对应的键值为value，然后返回整个 Map 结构,如果key已经有值，则键值会被更新，否则就新生成该键。
+	m.set('name','Tom')
+	m.set(obj1,'Hello')
+	m.set(obj2,'你好')
+
+
+	//clear():清除所有键值,没有返回值
+	m.clear()
+
+	//delete(key):delete方法删除某个键，返回true。如果删除失败，返回false。
+	console.log(m.delete(obj2))
+
+	//get(key):读取key对应的键值，如果找不到key，返回undefined。
+	console.log(m.get(obj1))
+
+	//has(key):has方法返回一个布尔值，表示某个键是否在当前 Map 对象之中。
+	console.log(m.has(obj1))
+
+	//Map对象的size属性返回Map实例的键值对的总数
+	console.log(m.size)
+
+
+</script>
+</html>
