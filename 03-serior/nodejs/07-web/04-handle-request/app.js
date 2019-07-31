@@ -1,9 +1,4 @@
-/*
-* @Author: TomChen
-* @Date:   2019-07-25 15:02:03
-* @Last Modified by:   TomChen
-* @Last Modified time: 2019-07-26 11:57:20
-*/
+
 const http = require('http')
 const fs = require('fs')
 const path = require('path')
