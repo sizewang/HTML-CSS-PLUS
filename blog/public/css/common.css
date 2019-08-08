@@ -43,6 +43,7 @@ body{
 	padding-bottom: 5px;
 	margin-bottom: 10px;
 	border-radius: 5px;
+	display: none;
 }
 .user-panel .btn{
 	width:100%;
@@ -56,6 +57,7 @@ body{
 	padding-left: 20px;
 	box-sizing: border-box;
 	height: 130px;
+	display: block;
 }
 #user-info .link{
 	text-align: left;
