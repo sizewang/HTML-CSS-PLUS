@@ -5,7 +5,7 @@
 * @Last Modified time: 2019-08-09 09:27:27
 */
 
-const path = require('path')
+const path = require('path')//path用绝对路径
 
 const htmlWebpackPlugin = require('html-webpack-plugin')
 
@@ -27,7 +27,7 @@ module.exports = {
         // filename: '[name]-[chunkhash]-bundle.js',
         filename: '[name]-[hash]-bundle.js',
         //所有输出文件的目标路径
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist')//path用绝对路径
     },
     
     module: {
