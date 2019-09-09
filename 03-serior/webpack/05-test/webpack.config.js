@@ -40,9 +40,6 @@ module.exports = {
                   'css-loader'
                 ]
             },
-
-
-
             //处理图片
             {
                 test: /\.(png|jpg|gif)$/i,
